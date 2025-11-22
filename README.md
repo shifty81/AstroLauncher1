@@ -512,7 +512,9 @@ For secure remote access, you can enable HTTPS:
    - Remote: `https://YOUR_PUBLIC_IP:443`
 
 4. **Port Forwarding**
-   - If accessing remotely, forward port `443 TCP` on your router
+   - If accessing remotely, forward the port specified in `SSLPort` on your router
+   - If using the default port 443, forward `443 TCP`
+   - If using a custom port (e.g., 8443), forward that port instead
 
 ## Advanced Features
 
@@ -677,7 +679,7 @@ CPUAffinity = 0,1,2,3
 
 3. **Alternative Solutions:**
    - Use [ngrok](https://ngrok.com) or similar tunneling service
-   - Use a VPN with port forwarding support
+   - Use a VPN service with port forwarding support (e.g., PIA, AirVPN)
    - Host on a VPS/cloud server (e.g., AWS, Azure, DigitalOcean)
 
 ### Server Not Appearing in Browser
@@ -769,7 +771,7 @@ A: If `AutoUpdateServerSoftware = True`, updates are automatic. Otherwise, delet
 A: Not directly, but you can use NSSM (Non-Sucking Service Manager) to run it as a service.
 
 **Q: Is there Linux support?**
-A: The server only runs on Windows. You can use Wine or run in a Windows VM on Linux.
+A: The Astroneer dedicated server is Windows-only. However, you can run it on Linux using Docker (see Method 3 in Quick Start Guide), Wine, or a Windows VM.
 
 **Q: How do I reset the web interface password?**
 A: Delete the `WebServerPasswordHash` line from `AstroLauncherConfig.ini` and restart the launcher.
